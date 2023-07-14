@@ -15,17 +15,17 @@ const CheckoutItem = () => {
                             <img className='image-container' src={cartItem.imageUrl} alt={cartItem.name} />
                             <span className='name'>{cartItem.name}</span>
                             <span className='quantity'>
-                                <button onClick={() => decreesItemFromCart(cartItem)}>{"<"}</button>
-                                {cartItem.quantity}
-                                <button onClick={() => addItemsToCart(cartItem)}>{">"}</button>
+                                <span onClick={() => decreesItemFromCart(cartItem)} className='arrow'>{'<'}</span>
+                                <span className='value'>{cartItem.quantity}</span>
+                                <span onClick={() => addItemsToCart(cartItem)} className='arrow'>{'>'}</span>
                             </span>
                             <span className='price'>{totalPrice}$</span>
-                            <button className='remove-button' onClick={() => removeItemFromCart(cartItem)}>X</button>
+                            <div className='remove-button' onClick={() => removeItemFromCart(cartItem)}>X</div>
                         </div>
                     );
                 })
             }
-            <span>TOTAL: ${totalItemsPrice}</span>
+            <span className='total'>Total: ${totalItemsPrice}</span>
         </Fragment>
     );
 }

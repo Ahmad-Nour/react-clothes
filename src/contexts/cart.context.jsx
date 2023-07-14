@@ -32,10 +32,9 @@ const removeItemInCart = (cartItems, itemToRemove) => {
             }
             return item;
         });
-        if (needToRemoveItem){
+        if (needToRemoveItem) {
             items = removeCartItem(items, itemToRemove);
         }
-        console.log(items)
         return items;
     }
 
